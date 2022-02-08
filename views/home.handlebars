@@ -1,0 +1,17 @@
+<div class="row mt-4">
+    {{#each projects}}
+        <div class="col-sm-12 .col-md-6 col-lg-4 mt-4">
+            <div class="card" style="width: 18rem;">
+                <a href="/api/v1/projects/{{this._id}}">
+                    <img src="{{this.img}}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <a href="/api/v1/projects/{{this._id}}">
+                        <h5 class="card-title">{{this.name}}</h5>
+                    </a>
+                    <p class="card-text">{{this.shortName}}</p>
+                </div>
+            </div>
+        </div>
+    {{/each}}    
+</div>

@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "61d706d47828628c1c3e4d5e"
+  },
+  "name": "Price Chart",
+  "price": 29.4777,
+  "date": {
+    "$date": "2022-01-06T17:00:00Z"
+  },
+  "time": {
+    "$date": "2022-01-06T17:00:00Z"
+  },
+  "createAt": {
+    "$timestamp": {
+      "t": 1641481950,
+      "i": 1
+    }
+  },
+  "updateAt": {
+    "$timestamp": {
+      "t": 1641481950,
+      "i": 2
+    }
+  },
+  "idProject": "61b1cbcea33addc6e47a3079"
+},{
+  "_id": {
+    "$oid": "61d706ea7828628c1c3e4d5f"
+  },
+  "name": "Price Chart",
+  "price": 26.2377,
+  "date": {
+    "$date": "2022-01-06T17:00:00Z"
+  },
+  "time": {
+    "$date": "2022-01-06T17:00:00Z"
+  },
+  "createAt": {
+    "$timestamp": {
+      "t": 1641481962,
+      "i": 1
+    }
+  },
+  "updateAt": {
+    "$timestamp": {
+      "t": 1641481962,
+      "i": 2
+    }
+  },
+  "idProject": "61b1cebaa33addc6e47a307a"
+}]

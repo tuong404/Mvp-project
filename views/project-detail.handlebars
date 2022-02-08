@@ -1,0 +1,26 @@
+<div class="row mt-4">
+        <div class="col-sm-12 .col-md-6 col-lg-8 mt-8">
+            <div class="left" >
+                <img src="{{project.img}}" class="img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{project.name}}</h5>
+                    <h5 class="card-title">{{project.description}}</h5>
+                    <p class="card-text">{{project.category}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 .col-md-6 col-lg-4 mt-4">
+            <div  class="right">
+                    <h5>Current price</h5>
+                    <span class="price">${{project.price}}</span>
+                    <span class="price">{{project.priceChange}}</span>
+                    <button type="button" class="btn btn-danger">Buy DOT</button>
+                </div>
+            </div>
+        </div>
+        
+       
+        <div class="content">
+            {{project.content}}
+        </div>
+</div>

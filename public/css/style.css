@@ -1,0 +1,43 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.img {
+    width: 200px;
+}
+
+.price {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.price:nth-child(2) {
+    background-color: none;
+    margin-right: 10px;
+}
+
+.price:nth-child(3) {
+    width: 80px;
+    text-align: center;
+    background-color: #dc3545;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.btn {
+    display: block;
+    margin-left: auto;
+}

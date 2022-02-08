@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "61d68d920eb79faebff4a0fd"
+  },
+  "marketCap": 31.321321,
+  "volume": 1.23444,
+  "timeHigh": 5,
+  "timeLow": 1.7,
+  "createAt": {
+    "$timestamp": {
+      "t": 1641451081,
+      "i": 1
+    }
+  },
+  "updateAt": {
+    "$timestamp": {
+      "t": 1641451081,
+      "i": 2
+    }
+  },
+  "idProject": "61b1cbcea33addc6e47a3079"
+},{
+  "_id": {
+    "$oid": "61d7b8c2ad92db63a2b35d58"
+  },
+  "marketCap": 28.8071,
+  "volume": 1.2854,
+  "timeHigh": 55,
+  "timeLow": 2.7,
+  "createAt": {
+    "$timestamp": {
+      "t": 1641527490,
+      "i": 1
+    }
+  },
+  "updateAt": {
+    "$timestamp": {
+      "t": 1641527490,
+      "i": 2
+    }
+  },
+  "idProject": "61b1cebaa33addc6e47a307a"
+},{
+  "_id": {
+    "$oid": "61d7bc49ad92db63a2b35d61"
+  },
+  "marketCap": 2.995,
+  "volume": 74.21,
+  "timeHigh": 621.7,
+  "timeLow": 0.88,
+  "createAt": {
+    "$timestamp": {
+      "t": 1641528393,
+      "i": 1
+    }
+  },
+  "updateAt": {
+    "$timestamp": {
+      "t": 1641528393,
+      "i": 2
+    }
+  },
+  "idProject": "61cb6a2cf1c68e5da215f031"
+}]
