@@ -1,0 +1,68 @@
+[{
+  "_id": {
+    "$oid": "61daf4a13c43a6aec6269828"
+  },
+  "title": "Moonriver",
+  "Category": [
+    "Parachain",
+    "Canary net",
+    "EVM "
+  ],
+  "sortIntroduction": "As a decentralized smart contract platform, Moonriver requires the MOVR tokento function.",
+  "detailDescription": "Moonriver is a companion network to Moonbeam and provides a permanently incentivized canary network. New code ships to Moonriver first, where it can be tested and verified under real economic conditions. Once proven, the same code ships to Moonbeam on Polkadot.",
+  "logo": "https://dotmarketcap.com/uploads/moonriver-logo-01.png",
+  "website": "https://dotmarketcap.com/coin/moonriver",
+  "email": "moonriver@gmail.com",
+  "twiter": "moonriver@twiter.com",
+  "telegram": "moonriver@telegram.com",
+  "element": "element",
+  "github": "moonriver@github.com",
+  "coinMaketCap": 159,
+  "coinGecko": 321,
+  "subsocial": "",
+  "officalToken": "",
+  "ParentChain": [
+    "ABmatrix",
+    "Altải"
+  ],
+  "createAt": {
+    "$date": "2022-01-09T14:43:45.208Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-09T14:43:45.208Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61daf612846d67ad0a5c2e9f"
+  },
+  "title": "Reef Finance",
+  "Category": [
+    "Substrate-based",
+    "DeFi"
+  ],
+  "sortIntroduction": "Reef Chain is the most advanced EVM-compatible blockchain.",
+  "detailDescription": "Reef Chain is the most advanced EVM-compatible blockchain. It's self-upgradable and has on-chain governance. Its infrastructure also allows for EVM extensions which allows for native token bridge, scheduled calls (ie. recurring payments), and smart contract in-place code upgrades. In the near future, it will support an additional VM which will allow developers to write code in multiple programming languages. The network runs on a Nominated Proof-of-Stake (NPoS) consensus mechanism, which offers scalability and low fees. ",
+  "logo": "https://assets.coingecko.com/coins/images/13504/large/Group_10572.png?1610534130",
+  "website": "https://dotmarketcap.com/coin/moonriver",
+  "email": "moonriver@gmail.com",
+  "twiter": "moonriver@twiter.com",
+  "telegram": "moonriver@telegram.com",
+  "element": "element",
+  "github": "moonriver@github.com",
+  "coinMaketCap": 159,
+  "coinGecko": 321,
+  "subsocial": "",
+  "officalToken": "",
+  "ParentChain": [
+    "ABmatrix",
+    "Altải"
+  ],
+  "createAt": {
+    "$date": "2022-01-09T14:49:54.368Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-09T14:49:54.368Z"
+  },
+  "__v": 0
+}]

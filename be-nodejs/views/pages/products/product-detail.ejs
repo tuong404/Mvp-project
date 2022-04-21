@@ -1,0 +1,156 @@
+<%- include('../../partials/header')-%>
+<div class="container">
+    <div class="row mt-4">
+        <% if (susscess.length > 0) { %> 
+            <div class="alert alert-danger messages__susscess">
+
+                <span class="cart-close">X</span>
+                <span class="roof-left">/</span>
+                <span class="roof-right">\</span>
+                <div><i class="fa-solid fa-circle-check"></i> <%= susscess %></div>
+                <a href="/api/v1/carts">Xem giỏ hàng và thanh toán</a>
+            </div>
+        <% }%>
+        <h3 class=" col-lg-12"><%= product.name %></h3>
+
+        <div class="col-sm-12 .col-md-6 col-lg-7 mt-4">
+            <div class="left" >
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <% if(productAlbum) { %>
+                            <% productAlbum.forEach(function(img, index) { %>
+                                <% if (index == 0) { %>
+                                    <div class="carousel-item active">
+                                        <a data-fancybox="carousel-item" href="<%= img %>">
+                                            <img class="d-block w-100" src="<%= img %>" alt="First slide">
+                                        </a>
+                                        
+                                    </div>
+                                 <% } else { %>
+                                    <div class="carousel-item">
+                                        <a data-fancybox="carousel-item" href="<%= img %>">
+                                            <img class="d-block w-100" src="<%= img %>" alt="First slide">
+                                        </a>
+                                    </div>
+                                 <% } %>
+                            <% }) %>
+                        <% } else { %>
+                            <img class="no__img" src="/images/No-Image-Placeholder.svg.png" alt="">
+                        <% } %>
+                        
+                    </div>
+                    
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <ul class="list__insurance">
+                    <li class="list__insurance-item"> <img class="list__insurance-img" src="/images/doimoi.png" /> <p> Hư gì đổi nấy <span class="item__block">12 tháng</span> tại 30 siêu thị (miễn phí tháng đầu)</p> </li>
+                    <li class="list__insurance-item"><img class="list__insurance-img" src="/images/khien.png" /> <p>Bảo hành <span class="item__block">chính hãng điện thoại 12 tháng</span></p>  </li>
+                    <li class="list__insurance-item"><img class="list__insurance-img" src="/images/box.png" /> <p>Bộ sản phẩm gồm: Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C </p> </li>
+                </ul>
+                <div class="card-body">
+                    <% if(product.imgMain) { %>
+                        <a data-fancybox="img__main" href="<%= product.imgMain %>">
+                            <img class="img__main" src="<%= product.imgMain %>" alt="">
+                        </a>
+                        
+                    <% } else { %>
+                        <img class="no__img" src="/images/No-Image-Placeholder.svg.png" alt="">
+                    <% } %>
+                   
+                    <h5 class="info">Thông tin sản phẩm</h5>
+                    <p class="content"><%= product.content %></p>
+                </div>
+            </div>
+        </div>        
+        <div class="col-sm-12 .col-md-6 col-lg-5 mt-4">
+            <div class="right">
+                <ul class="right__list">
+                    <% productVersion.forEach(function(version, index) { %>
+                        <% if (index == 0) { %>
+                            <li class="right__list-item item__version active"> <%= version %></li>
+                         <% } else { %>
+                            <li class="right__list-item item__version "> <%= version %></li>
+                         <% } %>
+                    <% }); %>
+                   
+                </ul>
+                <ul class="right__list">
+                    <% productColor.forEach(function(color, index) { %>
+                        <% if (index == 0) { %>
+                            <li class="right__list-item item__color active"> <%= color %></li>
+                         <% } else { %>
+                            <li class="right__list-item item__color"> <%= color %></li>
+                         <% } %>
+                    <% }); %>
+                </ul>
+                 
+                <span class="price"></span> 
+                <span class="label">Trả góp 0%</span>
+                <span class="price"><%= product.priceChange %></span>
+                <h5 class="amount">                    
+                    <% if (productAmount > 0) { %>
+                        Còn hàng
+                     <% } else { %>
+                        Hết hàng
+                     <% } %>
+                </h5>
+                <a  href="/api/v1/carts/add/<%= product.slug %>" id="add__cart"><button type="button" class="btn btn-danger"> Thêm vào giỏ hàng</button></a>
+                <!-- <a href="/api/v1/carts/buynow"><button type="button" class="btn btn-danger">Mua ngay</button></a> -->
+                <h5 class="mt-4">Cấu hình <%= product.name %></h5>
+                <table class="table table-striped">
+                    <tbody>
+                        <% for (const system in productSystem) { %>
+                            <tr>
+                                <th scope="row"><%= system %></th>
+                                <td ><%= productSystem[system] %> </td>
+                            </tr>
+                        <% }; %>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    const versionElements = document.querySelectorAll('.item__version');
+    const colorElements = document.querySelectorAll('.item__color');
+    const moneyElement = document.querySelector('.price');
+
+    versionElements.forEach((item, index) => {
+        item.onclick = function() {
+            document.querySelector('.item__version.active').classList.remove('active');
+            
+            this.classList.add('active');
+        }     
+    })
+
+    colorElements.forEach((item, index) => {
+        item.onclick = function() {
+            document.querySelector('.item__color.active').classList.remove('active');
+            
+            this.classList.add('active');
+        }     
+    })
+
+    function format2(n, currency) {
+        return n.toFixed(3).replace(/(\d)(?=(\d{3})+\.)/g, '$1.') + currency ;
+    }
+    moneyElement.innerHTML = format2(<%= product.price %>, ' đ');
+    
+
+    // Box alert add to cart
+    const buttonClose = document.querySelector('.cart-close');
+    const boxAlert = document.querySelector('.messages__susscess');
+    buttonClose.addEventListener('click', function(e) {
+        boxAlert.style.display = 'none';
+    })
+</script>
+
+<%- include('../../partials/footer')-%>

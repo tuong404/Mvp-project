@@ -1,0 +1,139 @@
+[{
+  "_id": {
+    "$oid": "61b1fc7ae1921a8c5ef3bfb8"
+  },
+  "username": "admin",
+  "password": "admin",
+  "email": "admin@gmail.com",
+  "role": "Admin",
+  "fullname": "Administrator",
+  "age": 20,
+  "phone": "1234567890",
+  "address": "Da Nang",
+  "createAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  },
+  "updateAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  }
+},{
+  "_id": {
+    "$oid": "61b1fcdfe1921a8c5ef3bfb9"
+  },
+  "username": "trung",
+  "password": "trung12",
+  "email": "trunghuynh12@gmail.com",
+  "role": "user",
+  "fullname": "Huynh Ngoc Trung",
+  "age": 20,
+  "phone": "1234567890",
+  "address": "Da Nang",
+  "createAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  },
+  "updateAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cedd0d596732bc7ae93af2"
+  },
+  "createAt": {
+    "$date": "2021-12-31T10:35:57.854Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-31T10:35:57.854Z"
+  },
+  "__v": 0,
+  "address": "Da Nang",
+  "age": 21,
+  "email": "tuongka321@gmail.com",
+  "fullname": "Dặng Văn Tưởng",
+  "password": "123tuong",
+  "username": "tuong"
+},{
+  "_id": {
+    "$oid": "61cee16bd5f8c8b55dd89061"
+  },
+  "username": "tuan",
+  "password": "tuan123",
+  "email": "tuan213@gmail.com",
+  "fullname": "Nguyễn Quốc Tuấn",
+  "age": 20,
+  "address": "Da Nang",
+  "createAt": {
+    "$date": "2021-12-31T10:54:35.793Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-31T10:54:35.793Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61cee1a1d5f8c8b55dd89064"
+  },
+  "username": "trong",
+  "password": "tzgyen",
+  "email": "trong213@gmail.com",
+  "fullname": "Nguyễn Quốc Tuấn",
+  "age": 20,
+  "address": "Da Nang",
+  "createAt": {
+    "$date": "2021-12-31T10:55:29.037Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-31T10:55:29.037Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61cee3cb9eebefc1c21df2f1"
+  },
+  "username": "thanhnguyen",
+  "password": "1234546",
+  "email": "thanh321@gmail.com",
+  "fullname": "Trấn Thành",
+  "age": 32,
+  "address": "Da Nang",
+  "createAt": {
+    "$date": "2021-12-31T11:04:43.137Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-31T11:04:43.137Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61cee464d4a1c1dcc4a488f2"
+  },
+  "username": "thanhnguyezn",
+  "password": "1234546",
+  "email": "thanh321@gmail.com",
+  "fullname": "Trấn Thành",
+  "age": 32,
+  "address": "Da Nang",
+  "createAt": {
+    "$date": "2021-12-31T11:07:16.931Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-31T11:07:16.932Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61cee4a1118a62c55f120621"
+  },
+  "username": "dungtran",
+  "password": "123454z6",
+  "email": "thanhdung321@gmail.com",
+  "fullname": "Trấn Thành Dũng",
+  "age": 32,
+  "address": "Da Nang",
+  "createAt": {
+    "$date": "2021-12-31T11:08:17.644Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-31T11:08:17.644Z"
+  },
+  "__v": 0
+}]

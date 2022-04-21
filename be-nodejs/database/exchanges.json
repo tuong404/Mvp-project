@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "61dbf3d991540200ff3f4e3e"
+  },
+  "name": "Binance",
+  "img": "https://bin.bnbstatic.com/static/images/common/favicon.ico",
+  "createAt": {
+    "$date": "2021-12-08T17:00:00Z"
+  },
+  "status": [
+    "Up",
+    "Down"
+  ],
+  "updateAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  },
+  "idProject": "61b1cebaa33addc6e47a307a"
+}]

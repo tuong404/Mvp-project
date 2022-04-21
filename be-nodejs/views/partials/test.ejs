@@ -1,0 +1,30 @@
+<% if(user) { %>
+    <ul class="navbar-nav navbar-nav-right">
+       <li class="nav-item nav-profile dropdown">
+         <a class="nav-link dropdown-toggle user__navbar" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+           <div class="nav-profile-img">
+             <img src="<%= user.avatar %>" alt="image">
+             <span class="availability-status online"></span>
+           </div>
+           <div class="nav-profile-text">
+             <p class="mb-1 text-black"><%= user.fullname %></p>
+           </div>
+         </a>
+         <div class="dropdown-menu navbar-dropdown navbar-dropdown1" aria-labelledby="profileDropdown">
+           <a class="dropdown-item" href="/api/v1/logout">
+             <i class="fa-solid fa-right-from-bracket"></i> Signout </a>
+         </div>
+       </li>
+   
+     </ul>
+<% } else { %>
+<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-right">
+   <li class="header__item nav-item">
+       <i class="fa-solid fa-user"></i>
+       <a class="nav-link" href="/api/v1/login">Đăng nhập</a>
+   </li>
+   <li class="nav-item">
+   <a class="nav-link" href="/api/v1/register">Đăng kí</a>
+   </li> 
+</ul>
+<% } %>

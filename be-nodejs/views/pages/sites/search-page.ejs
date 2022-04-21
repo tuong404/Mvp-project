@@ -1,0 +1,35 @@
+<%- include('../../partials/header')-%>
+
+<div class="container">
+    <div class="row mt-4 mb-4">
+        
+    <% if (products.length >= 1) { %>
+        <h3>Có <%=products.length %> sản phẩm tìm thấy. </h3>
+        <% products.forEach(function(product) { %>
+            <div class="col-lg-3 mt-4">
+                <div class="card boder-table card__height">
+                    <a href="/api/v1/products/<%= product.slug %>" class="card-link">
+                        <img src="<%=product.img %>" class="card-img-top" alt="image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/api/v1/products/<%= product.slug %>" class="card-title"><h5 ><%=product.name %></h5></a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <h3>Rất tiếc, Website không tìm thấy kết quả nào phù hợp với từ khóa </h3>
+        
+        <div>
+            <h3>Để tìm được kết quả chính xác hơn, bạn vui lòng:</h3>
+            <ul>
+                <li>Kiểm tra lỗi chính tả của từ khóa đã nhập</li>
+                <li>Thử lại bằng từ khóa khác</li>
+                <li>Thử lại bằng những từ khóa tổng quát hơn</li>
+                <li>Thử lại bằng những từ khóa ngắn gọn hơn</li>
+            </ul>
+        </div> 
+    <% } %>   
+</div>
+</div>
+<%- include('../../partials/footer')-%>

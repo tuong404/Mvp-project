@@ -1,0 +1,139 @@
+<%- include('../../partials/header')-%>
+<div class="container">
+    
+    <% if (typeof cart !== "undefined") { %>
+        <div class="container__cart-top">
+            <a href="/api/v1/products">Mua thêm sản phẩm khác</a>
+            <h4>Giỏ hàng của bạn</h4>
+        </div>
+        
+        <table class="table table-striped alignmiddle">
+            
+            <tr>
+                <th colspan="2">Tất cả (<%= cart.length %> sản phẩm)</th>
+                <th>Đơn Giá</th>
+                <th colspan="2">Số lượng</th>
+                <th>Thành tiền</th>
+                <th></th>
+            </tr>
+            
+            <% var total = 0; %>
+            <% cart.forEach(function(product){ %>
+                <% var sub = product.qty * product.price %>
+                <% total += +sub %>
+            <tr>
+                <td colspan="2"><img class="cpi" src="<%= product.img %>" alt=""> 
+                    <%= product.name %>
+                </td>
+                <td class="product__price"><%= product.price %></td>
+                <td colspan="2">
+                   <div class="product__block">
+                    <a class="product__block-left" href="/api/v1/carts/update/<%= product.title %>?action=add">+</a>
+                    <span class="product__block-number"><%= product.qty %></span>
+                    <a class="product__block-right" href="/api/v1/carts/update/<%= product.title %>?action=remove">-</a>    
+                </div>
+                </td>
+                <td class="product__price2"><%= sub %></td>
+                <td>
+                    <a class="product__block-trash" data-bs-toggle="modal"  data-bs-target="#delete-modal" data-bs-id="<%= product.title %>" href=""><i class="fa-solid fa-trash"></i></a>
+                    <a class="product__block-delete" href=""> </a>
+                </td>
+            </tr>
+            <% }); %>
+            <tr>
+                <td colspan="7" align="right"><b>Tổng: </b> <%= total%></td>
+            </tr>
+            <tr>
+                <td colspan="5" align="right">
+                    <a class="clearcart btn btn-danger"  href="/api/v1/carts/clear">Xóa tất cả sản phẩm</a>
+                </td>
+                <td colspan="5" align="right">
+                    <a class="buynow btn btn-primary " href="#">Mua ngay</a>
+                </td>
+            </tr>
+            <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Bạn có muốn xóa?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-danger "  id="btn__delete" >Xóa bỏ</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+        </table>
+        <input type="hidden" name="cmd" value="_ext-enter">
+        <form class="pp" action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="upload" value="1">
+            <!-- jultranet-facilitator -->
+            <input type="hidden" name="business" value="jultranet-facilitator@gmail.com">
+        <% var num = 0; %>
+        <% cart.forEach(function(p){ %>
+            <% num++ %>
+            <input type="hidden" name="item_name_<%= num %>" value="<%= p.name %>">
+            <input type="hidden" name="amount_<%= num %>" value="<%= p.price %>">
+            <input type="hidden" name="quantity_<%= num %>" value="<%= p.qty %>">
+        <% }); %>
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="amount" value="<%= total %>">
+            <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+        </form>        
+        
+        <% } else {%>
+            <h3 class="text-center">Không có sản phẩm nào trong giỏ hàng của bạn.</h3>
+            <a href="/api/v1/products">Quay lại chọn sản phẩm</a>
+        <% } %>
+    </div>
+    </div>
+    <script>
+       
+        // Clear carts
+        $(function() {
+           
+            $('a.clearcart').on('click', function () {
+                if (!confirm('Confirm clear cart'))
+                    return false;
+            });
+            
+            $('a.buynow').on('click', function (e) {
+                e.preventDefault();
+                
+                $.get('/api/v1/carts/buynow', function() {
+                    $('form.pp input[type=image]').click();
+                    $('.ajaxbg').show();
+                });
+            });
+                
+        });
+        
+        // Delete
+        var idProduct;
+        var deleteModal = document.getElementById('delete-modal');
+        var buttonDelete = document.getElementById('btn__delete');
+        var productDelete = document.querySelector('.product__block-delete');
+        // var productDelete = document.querySelector('.product__block-trash');
+        console.log(productDelete)
+
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        idProduct = button.getAttribute('data-bs-id');
+        });
+
+        buttonDelete.onclick = function() {
+            productDelete.href = '/api/v1/carts/update/'+ idProduct + '?action=clear';
+            productDelete.click();
+        };
+    
+    </script>
+    <%- include('../../partials/footer')-%>
+

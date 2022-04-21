@@ -1,0 +1,78 @@
+<%- include('./partials/header')-%>
+<div class="container">
+    <nav>
+        <ul class="list-group">
+            <% categories.forEach(function(category) { %>
+               <a href="/api/v1/categories/<%= category.slug %>" class=""> <img class="img__categories" src="<%= category.img %>" alt=""></a>
+            <%})%>
+        </ul>
+    </nav>
+    <div class="row mb-4">
+    <% products.forEach(function(product) { %>
+        <div class="col-lg-3 mt-4">
+            <div class="card boder-table  card__height card-style">
+                <a href="/api/v1/products/<%= product.slug %>" class="card-link">
+                    <img src="<%= product.img %>" class="card-img-top" alt="image">
+                </a>
+                <div class="card-body">
+                    <a href="/api/v1/products/<%= product.slug %>" class="card-title"><p ><%= product.name %></p></a>
+                    <h5 class="card-text"></h5>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+    <nav class ="container__paginate" aria-label="Page navigation ">
+        
+    <% if (pages > 0) { %>
+        <ul class="pagination text-center">
+            <% if (current == 1) { %>
+                <li  class="page-item disabled"><a class="page-link">First</a></li>
+            <% } else { %>
+                <li class="page-item"><a class="page-link" href="/api/v1/products/page/1">First</a></li>
+            <% } %>
+            <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+            <% if (i !== 1) { %>
+                <li class="page-item disabled"><a >...</a></li>
+            <% } %>
+            <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                <% if (i == current) { %>
+                    <li class="page-item active"><a class="page-link"><%= i %></a></li>
+                <% } else { %>
+                    <li class="page-item"><a class="page-link" href="/api/v1/products/page/<%= i %>"><%= i %></a></li>
+                <% } %>
+                <% if (i == Number(current) + 4 && i < pages) { %>
+                    <li class="disabled"><a>...</a></li>
+                <% } %>
+            <% } %>
+            <% if (current == pages) { %>
+                <li class="page-item disabled"><a class="page-link">Last</a></li>
+            <% } else { %>
+                <li class="page-item"><a class="page-link" href="/api/v1/products/page/<%= pages %>">Last</a></li>
+            <% } %>
+        </ul>
+    <% } %>
+    </nav> 
+    </div>
+</div>
+    
+
+<footer class="footer">
+
+   
+<script>
+
+    const moneyElement = document.querySelectorAll('.card-text');
+
+    function format3(n, currency) {
+        return n.toFixed(3).replace(/(\d)(?=(\d{3})+\.)/g, '$1.') + currency ;
+    }
+    <% products.forEach(function(product) { %>
+        for (const element of moneyElement)  {
+            element.innerHTML = format3(<%= product.price %>, 'đ')
+            console.log(element)
+        }
+    <% }); %>
+        
+</script>
+<%- include('./partials/footer')-%>
+</footer>

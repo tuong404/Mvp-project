@@ -1,0 +1,172 @@
+<%- include('../../partials/header')-%>
+  <div class="container-scroller">
+
+    <%- include('../../partials/navbar')-%>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <%- include('../../partials/sidebar')-%>
+          <!-- partial -->
+          <div class="main-panel main-margin">
+            <div class="content-wrapper fix-padding" >
+              <div class="page-header">
+                <h3 class="page-title"> Users Table </h3>
+                
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Table</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Users tables</li>
+                  </ol>
+                </nav>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="table__top">
+                        <h4 class="card-title">Users Table</h4>
+                        <a href="/api/v1/admin-page/user/create" class="table__top-add"> Add user </a>
+                      </div>
+                      </p>
+                      <table class="table">
+                        <thead>
+                          <tr class ="home">
+                            <th> STT </th>
+                            <th> Username </th>
+                            <th> Fullname </th>
+                            <th> Age </th>
+                            <th> Address </th>
+                            <th> Phone </th>
+                            <th> Email </th>
+                            <th> Action </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% users.forEach(function(user, index) { %>
+                            <tr>
+                              <td>
+                                <%= index + 1 %>
+                              </td>
+                              <td>
+                                <%= user.username %>
+                              </td>
+                              <td>
+                                <%= user.fullname %>
+                              </td>
+                              <td>
+                                <%= user.age %>
+                              </td>
+                              <td>
+                                <%= user.address %>
+                              </td>
+                              <td>
+                                <%= user.phone %>
+                              </td>
+                              <td>
+                                <%= user.email %>
+                              </td>
+                              <td>
+                                <a class="link" href="/api/v1/admin-page/user/<%= user._id %>/update"><button type="button"
+                                    class="btn btn-primary fix-btn">Update</button> </a>
+                                <a class="link btn__delete" data-bs-toggle="modal"  data-bs-target="#delete-modal" data-bs-id="<%= user._id %>" href=""><button type="button"
+                                    class="btn btn-danger btn-delete fix-btn">Delete</button></a>
+                              </td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Xóa người dùng</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      Bạn có muốn xóa?
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                      <button type="button" class="btn btn-danger "  id="btn__delete" >Xóa bỏ</button>
+                  </div>
+                  </div>
+              </div>
+          </div>
+            <form name="form-delete" method="POST" action=""></form>
+            <nav class ="container__paginate  paginate__admin" aria-label="Page navigation ">
+        
+              <% if (pages > 0) { %>
+                  <ul class="pagination text-center">
+                      <% if (current == 1) { %>
+                          <li  class="page-item disabled"><a class="page-link">First</a></li>
+                      <% } else { %>
+                          <li class="page-item"><a class="page-link" href="/api/v1/admin-page/users/page/1">First</a></li>
+                      <% } %>
+                      <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                      <% if (i !== 1) { %>
+                          <li class="page-item disabled"><a >...</a></li>
+                      <% } %>
+                      <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                          <% if (i == current) { %>
+                              <li class="page-item active"><a class="page-link"><%= i %></a></li>
+                          <% } else { %>
+                              <li class="page-item"><a class="page-link" href="/api/v1/admin-page/users/page/<%= i %>"><%= i %></a></li>
+                          <% } %>
+                          <% if (i == Number(current) + 4 && i < pages) { %>
+                              <li class="disabled"><a>...</a></li>
+                          <% } %>
+                      <% } %>
+                      <% if (current == pages) { %>
+                          <li class="page-item disabled"><a class="page-link">Last</a></li>
+                      <% } else { %>
+                          <li class="page-item"><a class="page-link" href="/api/v1/admin-page/users/page/<%= i %>">Last</a></li>
+                      <% } %>
+                  </ul>
+              <% } %>
+              </nav> 
+            <%- include('../../partials/footer')-%>
+              <!-- partial -->
+          </div>
+
+          <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+  </div>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>  
+<script>
+
+var idUser;
+var deleteModal = document.getElementById('delete-modal');
+var buttonDelete = document.getElementById('btn__delete');
+var formDelete = document.forms['form-delete'];
+
+deleteModal.addEventListener('show.bs.modal', function (event) {
+var button = event.relatedTarget;
+// Extract info from data-bs-* attributes
+idUser = button.getAttribute('data-bs-id');
+});
+
+buttonDelete.onclick = function() {
+formDelete.action = '/api/v1/admin-page/user/' + idUser + '?_method=DELETE';
+formDelete.submit();
+
+};
+
+// Sort
+
+ $('tbody').sortable({
+   items: "tr:not('.home')",
+   placeholder: "ui-state-highlight",
+   update: function () {
+      var ids = $('tbody').sortable("serialize");
+      var url = "/admin/pages"
+      $.post(url, ids);
+   }
+ })
+
+</script>

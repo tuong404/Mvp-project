@@ -1,0 +1,31 @@
+<%- include('../../partials/header')-%>
+
+<div class="container">
+    <nav>
+        <ul class="list-group">
+            <% categories.forEach(function(category) { %>
+               <a href="/api/v1/categories/<%= category.slug %>" class=""> <img class="img__categories" src="<%= category.img %>" alt=""></a>
+            <%})%>
+        </ul>
+    </nav>
+
+    <div class="row mt-4 mb-4">    
+    <% if (products.length >= 1) { %>
+        <% products.forEach(function(product) { %>
+            <div class="col-lg-3 mt-4">
+                <div class="card boder-table card__height">
+                    <a href="/api/v1/products/<%= product.slug %>" class="card-link">
+                        <img src="<%=product.img %>" class="card-img-top" alt="image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/api/v1/products/<%= product.slug %>" class="card-title"><h5 ><%=product.name %></h5></a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <h3>Rất tiếc, Website không tìm thấy kết quả nào </h3>
+    <% } %>   
+</div>
+</div>
+<%- include('../../partials/footer')-%>

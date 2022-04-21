@@ -1,0 +1,15 @@
+<%- include('../../partials/header')-%>
+<div class="container">
+    <nav>
+        <ul class="list-group">
+            <% categories.forEach(function(item) { %>
+                <li class="list-group-item">
+                    <a href=""><img src="<%= item.img %>" alt=""></a>
+                </li>
+            <% }); %>  
+        </ul>    
+    </nav>
+</div>
+<footer class="footer">
+    <%- include('../../partials/footer')-%>
+</footer>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Website bán điện thoại di động chính hãng M10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/css/admin-page.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="app">
+        <div class="ajaxbg">
+            <div class="ajaxinner">
+                <h3>You are now being redirected to paypal...</h3>
+                <img src="/images/ajax-loader.gif" alt=""/>
+            </div>
+        </div>
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <div>
+                            <a href="/api/v1/home-page"><img src="/images/logo.png" class="logo" alt=""></a>
+                            <a class="navbar-brand" href="/api/v1/home-page">M10</a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <form class="d-flex" method="POST" action="/api/v1/products/search">
+                            <input class="form-control form__control-size me-2" type="text" name="name" placeholder="Bạn cần tìm gì ..." aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                        <div class="d-flex">
+                            <div class="header__cart"> 
+                                <a  class=" nav-link " href="/api/v1/carts">
+                                <i class="fa-solid fa-cart-arrow-down"></i>Giỏ hàng
+                                    <span class="add__cart-number">
+                                        <% if (typeof cart  !== "undefined") { %>
+                                            (<%= cart.length %>)
+                                        <%} else { %>
+                                            (0)
+                                        <% } %>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="navbar-nav navbar-nav-right collapse navbar-collapse" id="navbarSupportedContent">
+                           
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-right">
+                                <% if(login !== "undefined") { %>
+                                    <li class="nav-item nav-profile dropdown">
+                                        <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <div class="nav-profile-img">
+                                            <img src="" alt="image">
+                                            <span class="availability-status online"></span>
+                                          </div>
+                                          <div class="nav-profile-text">
+                                            <p class="mb-1 text-black"><%= login %></p>
+                                          </div>
+                                        </a>
+                                        <div class="dropdown-menu navbar-dropdown navbar-dropdown1" aria-labelledby="profileDropdown">
+                                          <a class="dropdown-item" href="/api/v1/logout">
+                                            <i class="fa-solid fa-right-from-bracket"></i> Signout </a>
+                                        </div>
+                                      </li>
+                                <% } else { %>
+                                    <li class="header__item nav-item">
+                                        <i class="fa-solid fa-user"></i>
+                                        <a class="nav-link" href="/api/v1/login">Đăng nhập</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="/api/v1/register">Đăng kí</a>
+                                    </li> 
+                                <%} %>
+                                
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>

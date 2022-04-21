@@ -1,0 +1,127 @@
+[{
+  "_id": {
+    "$oid": "61b1cbcea33addc6e47a3079"
+  },
+  "name": "Polkadot",
+  "img": "https://dotmarketcap.com/uploads/dot-logo-01.png",
+  "price": 28.4,
+  "priceChange": -2.96,
+  "category": [
+    "Relay Chain",
+    "Parathread",
+    "Bridge"
+  ],
+  "rating": 5,
+  "maketCap": 32680161030,
+  "volume": 1098621519,
+  "socialNetwork": {
+    "twiter": "https://twitter.com/Polkadot",
+    "telegram": "https://polkadot.network/",
+    "search": "https://polkascan.io/"
+  },
+  "shortName": "DOT",
+  "isFavorite": true,
+  "createAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  },
+  "updateAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  },
+  "content": "Polkadot facilitates cross-chain communication and interoperability by connecting multiple blockchains into one unified network.\n\nPolkadot's infrastructure includes the Relay Chain, the Parachains, and the Bridges.\n\nThe Relay Chain is the central chain of the Polkadot network. All validators of Polkadot are staked on the Relay Chain.\n\nThe Parachains are parallel chains that connect to the Relay chain and are maintained by their validators, called collators.\n\nThe Bridges are special blockchains that allow Parachains to connect to and communicate with external networks like Ethereum and Bitcoin\n\nPolkadot uses DOT tokens for operating on its network. DOT serves multiple purposes such as:\n\nGovernance: where participants can manage protocol updates and fixes.\n\nStaking: where the tokens are staked to ensure the network remains secure, as good validators are rewarded, and bad actors lose their stake. \n\nBonding: where new parachains are supported by bonding tokens.\n\nFees: for ferrying messages across parachains.\n\nBased on Polkadot’s first stakeholder vote, all DOT tokens will be redenominated by a factor of 100 at block 1,248,328, estimated to occur at 2020/08/21 4:40 PM (UTC). To support the redenomination plan, all DOT deposits made to Binance after block 1,205,128 will be multiplied by a coefficient of 100. For example, if a user deposits 10 DOT, he/she will be credited with 1,000 DOT to his/her account.\n\nWhat is PolkaDot?\nPolkadot enables scalability by allowing specialized blockchains to communicate with each other in a secure, trust-free environment.\n\nPolkadot is built to connect and secure unique blockchains, whether they be public, permission-less networks, private consortium chains, or oracles and other Web3 technologies. It enables an internet where independent blockchains can exchange information under common security guarantees.\n\nPolkadot is a living network with the core pillars of governance and upgradability. The network has an advanced suite of governance tools and, using the WebAssembly standard as a \"\"meta-protocol\"\", can autonomously deploy network upgrades. Polkadot adapts to your growing needs without the risks of network forks.\n\nBy connecting these dots, Polkadot serves as a foundational part of a decentralized web, where users control their data and are not limited by trust bounds within the network.\"",
+  "description": "A Sharded Network for Cross-Chain Communication and Interoperability.\n\n"
+},{
+  "_id": {
+    "$oid": "61b1cebaa33addc6e47a307a"
+  },
+  "name": "Chainlink",
+  "img": "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1547034700",
+  "price": 21.5,
+  "priceChange": 4,
+  "category": [
+    "Relay Chain",
+    "Parathread",
+    "Bridge"
+  ],
+  "rating": 5,
+  "maketCap": 10000013,
+  "volume": 100002,
+  "socialNetwork": {
+    "twiter": "https://twitter.com/Polkadot",
+    "telegram": "https://polkadot.network/",
+    "search": "https://polkascan.io/"
+  },
+  "shortName": "LINK",
+  "isFavorite": true,
+  "createAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  },
+  "updateAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  },
+  "content": "Project Introduction:\n\nChainlink is a decentralized network of nodes that provide data and information from off-blockchain sources to on-blockchain smart contracts via oracles, which has been developed since 2015.\n\nNowadays, smart contracts have been used for everything from creating novel crypto-financial products to develop new crypto assets. However, most smart contracts need to rely on some kind of external data source to properly execute their terms. Understanding this problem, Chainlink was created to act as a bridge between blockchain smart contracts and external data sources. Because each oracle within the Chainlink network is assigned a reputation score, they will be incentivized to supply users with precise data. Moreover, when nodes follow the software’s rules and provide useful data, they will be rewarded in Chainlink’s cryptocurrency, LINK.\n\n- Chainlink Network (LINK) aims to provide tamper-proof inputs and outputs of data for smart contracts on any blockchain.\n\n- An individual can receive on-chain and off-chain data by connecting his smart contracts to various data sources and third-party APIs. One can also send data to parties outside of the blockchain she uses via the Chainlink Network.\n\n- Chainlink's Meta Oracle provides data aggregation and reaction services, which enables developers to further improve the functionalities of their smart contracts.\n\n- The Chainlink token (LINK) is an ERC-677 token used as the payment for all services the Chainlink Network provides.\n\nKey Features and Highlights\n\nOn-chain function: \n\nFirst of all, ChainLink has smart contracts processed directly on the chain. These data administration contracts will handle the requested data of the users. This means that if a user wants to access data off-chain, they need to send a request contract to the ChainLink network. The blockchain will then process these requests in a separate contract.\n\nSecondly, there are three types of contracts to handle management system requirements, including: Reputation contract, order-matching contract, and aggregating contract. With these contracts, ChainLink will go through a process having three steps as follows: oracle selection, data reporting and result set. \n\nOff - chain function:\n\nBesides the first component - smart contracts, the second one is the off-chain administrative node. At present, ChainLink only connects to smart contracts on the Ethereum network, and the responsibility of these nodes is to collect data from the off-chain source, then follow the requirements of the contract agreement. Next, the data will be processed by ChainLink Core and passed to the on-chain contract to match the results."
+},{
+  "_id": {
+    "$oid": "61cb6a2cf1c68e5da215f031"
+  },
+  "name": "Kusama",
+  "img": "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1547034700",
+  "price": 21.6,
+  "priceChange": 4,
+  "category": [
+    "Relay Chain",
+    "Parathread",
+    "Bridge"
+  ],
+  "rating": 5,
+  "maketCap": 10000013,
+  "volume": 100002,
+  "socialNetwork": {
+    "twiter": "https://twitter.com/Polkadot",
+    "telegram": "https://polkadot.network/",
+    "search": "https://polkascan.io/"
+  },
+  "shortName": "KMS",
+  "isFavorite": true,
+  "createAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  },
+  "updateAt": {
+    "$date": "2000-12-31T17:00:00Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d9a8f74f2d80db4b289e0c"
+  },
+  "name": "Multichain",
+  "img": " https://dotmarketcap.com/uploads/Multichain%20logo-24.png",
+  "description": "Multichian coin z",
+  "price": 18.6,
+  "priceChange": -2.29,
+  "category": [
+    "Bridgem",
+    "MoonriverEco"
+  ],
+  "rating": 4,
+  "maketCap": 341.267,
+  "shortName": "MULTI",
+  "content": " Introducing Anyswap Anyswap is a fully decentralized cross chain swap protocol, based on Fusion DCRM technology, with automated pricing and liquidity system. Anyswap is a decentralized application running on the Fusion , Binance Smart Chain , Ethereum and Fantom blockchains. The first application from Anyswap is a DEX (Decentralized Exchange), which is called anyswap.exchange.",
+  "createAt": {
+    "$date": "2022-01-08T15:08:39.727Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-08T15:08:39.727Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dafbeb100b7ac8356150ce"
+  },
+  "category": [],
+  "createAt": {
+    "$date": "2022-01-09T15:14:51.258Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-09T15:14:51.258Z"
+  },
+  "__v": 0
+}]
